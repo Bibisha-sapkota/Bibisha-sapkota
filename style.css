@@ -1,0 +1,260 @@
+/* General reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  color: #222;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+header {
+  background: #6e90a8;
+  padding: 20px 40px;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  max-width: 900px;
+  margin: 0 auto 30px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.profile-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 80%;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  display: block; /* Ensures the image is a block element */
+  margin:  auto; /* Centers horizontally */
+}
+
+.intro .about {
+  max-width: 800px;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #6ec1e4; /* light pastel blue */
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #6e90a8;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 40px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #6e90a8;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+th, td {
+  padding: 12px 20px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  color: #222;
+}
+
+thead {
+  background-color: #6ec1e4;
+  color: white;
+}
+
+tbody tr:hover {
+  background-color: #f2f2f2;
+}
+
+/* Sections */
+section {
+  max-width: 900px;
+  background: white;
+  margin: 0 auto 40px;
+  padding: 30px 40px;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+/* Skills Section */
+.skills {
+  background: white;
+  padding: 2rem 3rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards;
+  animation-delay: 0.3s;
+}
+
+.skill-category {
+  margin-bottom: 2rem;
+}
+
+.skill-category h3 {
+  color: #6ec1e4;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 3px solid #6ec1e4;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+.skills ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.skills li {
+  margin-bottom: 1.2rem;
+  font-weight: 600;
+  position: relative;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 12px;
+  background: #eee;
+  border-radius: 6px;
+  margin-top: 6px;
+  overflow: hidden;
+  box-shadow: inset 0 2px 5px rgba(194, 27, 27, 0.1);
+}
+
+.progress {
+  height: 100%;
+  width: 0;
+  background-color: #6ec1e4;
+  border-radius: 6px;
+  animation: fillProgress 2s forwards;
+}
+
+/* Different skill widths (percentages) */
+.progress.html { width: 90%; animation-delay: 0.6s; }
+.progress.unity { width: 70%; animation-delay: 0.8s; }
+.progress.design { width: 80%; animation-delay: 1s; }
+.progress.office { width: 85%; animation-delay: 1.2s; }
+.progress.agile { width: 75%; animation-delay: 1.4s; }
+
+.progress.negotiation { width: 80%; animation-delay: 1.6s; }
+.progress.teamwork { width: 90%; animation-delay: 1.8s; }
+
+/* Animations */
+@keyframes fillProgress {
+  from { width: 0; }
+  to { width: var(--width); }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Certificates, Internships, Projects, Languages Sections */
+.certificates ul,
+.internships ul,
+.languages ul {
+  list-style: disc inside;
+  color: #222;
+  font-weight: 600;
+}
+
+/* Project Cards */
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 20px;
+}
+
+.project-card {
+  background: #6e90a8;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  padding: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+.project-card img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.project-card h3 {
+  margin-bottom: 6px;
+  color: #6ec1e4;
+}
+
+.project-card p {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/* Resume */
+.resume .download-btn {
+  display: inline-block;
+  background-color: #6ec1e4;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: background-color 0.3s ease;
+}
+
+.resume .download-btn:hover {
+  background-color: #58a4d7;
+}
+
+/* Contact Section */
+.contact ul {
+  list-style: none;
+  padding-left: 0;
+  font-weight: 600;
+}
+
+.contact li {
+  margin-bottom: 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 25px 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.social-links a {
+  color: #6ec1e4;
+  margin: 0 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #58a4d7;
+}
